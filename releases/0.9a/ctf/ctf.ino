@@ -95,6 +95,7 @@ byte timerSec = 0; // seconds
 #include <Wire.h>
 #include "FastLED.h"
 #include <avr/pgmspace.h>
+#include <EEPROM.h>
 
 
 //----- CLOCK CONFIG --------------------------------------
@@ -216,6 +217,7 @@ boolean configureScreen = false;
 
 // --------------INTERNAL FILES --------------------------------------------------------------
 
+#include "eprom.h"
 #include "fastReadWrite.h"
 #include "fastADC.h"
 #include "pinAssignments.h"
@@ -241,6 +243,8 @@ void setup() {
   Serial.begin(9600);
 
   delay(2000);
+
+  initEprom();
 
   pinMode(buzzerPin, OUTPUT); // init buzzer pin
   pinMode(buttonPin, INPUT_PULLUP); // 1 button config
@@ -439,7 +443,3 @@ void loop() {
     smallMessage2 = "y";
   }
 }
-
-
-
-

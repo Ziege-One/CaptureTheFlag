@@ -917,6 +917,8 @@ void buttonLong()
     smallMessage2 = "";
     setupSys = 99;
     configured = 2;
+    Serial.println("Finished setup Eprom saved");
+    writeEprom();        // Write Eprom
   }
 }
 
@@ -959,11 +961,3 @@ int  read_1_button()
   //every time through the loop, we need to reset the pressLength_Seconds counter
   pressLength_milliSeconds = 0;
 }
-
-
-
-
-
-
-
-

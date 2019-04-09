@@ -100,7 +100,7 @@ byte timerSec = 0; // seconds
 
 //----- CLOCK CONFIG --------------------------------------
 
-#define NUM_LEDS 20
+#define NUM_LEDS 40
 CRGB leds[NUM_LEDS];
 
 unsigned long Watch, _micro, time = micros();

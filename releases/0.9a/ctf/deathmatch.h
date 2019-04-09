@@ -76,7 +76,7 @@ void deathmatch()
     clearLeds();
     for (byte whiteLed = startfromLed; whiteLed < internalLeds + externalLeds; whiteLed = whiteLed + 1)
     {
-      allcolours(whiteLed, 4);
+      allcolours(whiteLed, pilot4o);
       delay(100);
     }
     captured = 4;
@@ -137,4 +137,3 @@ void deathmatch()
       captured = 98;
   }
 }
-

@@ -69,14 +69,37 @@
 #define adr_eprom_timerMin 50            // GAME TIMER minutes
 #define adr_eprom_timerSec 52            // GAME TIMER seconds
 
+#define adr_eprom_chanP1 54              // channel pilot 1
+#define adr_eprom_bandP1 56              // band pilot 1
+#define adr_eprom_chanP2 58              // channel pilot 2
+#define adr_eprom_bandP2 60              // band pilot 2
+#define adr_eprom_chanP3 62              // channel pilot 3
+#define adr_eprom_bandP3 64              // band pilot 3
+#define adr_eprom_chanP4 66              // channel pilot 4
+#define adr_eprom_bandP4 68              // band pilot 4
+#define adr_eprom_chanP5 70              // channel pilot 5
+#define adr_eprom_bandP5 72              // band pilot 5
+#define adr_eprom_chanP6 74              // channel pilot 6
+#define adr_eprom_bandP6 76              // band pilot 6
+#define adr_eprom_chanP7 78              // channel pilot 7
+#define adr_eprom_bandP7 80              // band pilot 7
+#define adr_eprom_chanP8 82              // channel pilot 8
+#define adr_eprom_bandP8 84              // band pilot 8
+
 
 uint16_t read_eprom(int address){
   return  (uint16_t) EEPROM.read(address) * 256 + EEPROM.read(address+1) ;
 }
 
 void write_eprom(int address,uint16_t val){
+  uint16_t temp;
+  temp = read_eprom(address);
+  if (temp != val)
+  {
+  Serial.print("Eprom Adresse: "); Serial.print(address); Serial.print(" Wert alt: "); Serial.print(temp); Serial.print(" Wert alt: "); Serial.println(val); 
   EEPROM.write(address, val  / 256);
   EEPROM.write(address+1,val % 256 );
+  }
 }
 
 void writeEprom(){
@@ -112,6 +135,24 @@ void writeEprom(){
     write_eprom(adr_eprom_spLevel,spLevel);
     write_eprom(adr_eprom_timerMin,timerMin);
     write_eprom(adr_eprom_timerSec,timerSec);
+
+
+    write_eprom(adr_eprom_chanP1,chanP1);
+    write_eprom(adr_eprom_bandP1,bandP1);
+    write_eprom(adr_eprom_chanP2,chanP2);
+    write_eprom(adr_eprom_bandP2,bandP2);
+    write_eprom(adr_eprom_chanP3,chanP3);
+    write_eprom(adr_eprom_bandP3,bandP3);
+    write_eprom(adr_eprom_chanP4,chanP4);
+    write_eprom(adr_eprom_bandP4,bandP4);
+    write_eprom(adr_eprom_chanP5,chanP5);
+    write_eprom(adr_eprom_bandP5,bandP5);
+    write_eprom(adr_eprom_chanP6,chanP6);
+    write_eprom(adr_eprom_bandP6,bandP6);
+    write_eprom(adr_eprom_chanP7,chanP7);
+    write_eprom(adr_eprom_bandP7,bandP7);
+    write_eprom(adr_eprom_chanP8,chanP8);
+    write_eprom(adr_eprom_bandP8,bandP8);
 }
 
 void initEprom(){
@@ -155,4 +196,21 @@ void initEprom(){
   spLevel = read_eprom(adr_eprom_spLevel);
   timerMin = read_eprom(adr_eprom_timerMin);
   timerSec = read_eprom(adr_eprom_timerSec);
+
+  chanP1 = read_eprom(adr_eprom_chanP1);
+  bandP1 = read_eprom(adr_eprom_bandP1);
+  chanP2 = read_eprom(adr_eprom_chanP2);
+  bandP2 = read_eprom(adr_eprom_bandP2);
+  chanP3 = read_eprom(adr_eprom_chanP3);
+  bandP3 = read_eprom(adr_eprom_bandP3);
+  chanP4 = read_eprom(adr_eprom_chanP4);
+  bandP4 = read_eprom(adr_eprom_bandP4);
+  chanP5 = read_eprom(adr_eprom_chanP5);
+  bandP5 = read_eprom(adr_eprom_bandP5);
+  chanP6 = read_eprom(adr_eprom_chanP6);
+  bandP6 = read_eprom(adr_eprom_bandP6);
+  chanP7 = read_eprom(adr_eprom_chanP7);
+  bandP7 = read_eprom(adr_eprom_bandP7);
+  chanP8 = read_eprom(adr_eprom_chanP8);
+  bandP8 = read_eprom(adr_eprom_bandP8);
 }

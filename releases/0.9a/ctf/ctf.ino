@@ -295,12 +295,13 @@ void loop() {
     rssi = getFilteredRSSI();
     if (rssi > rssiThreshold)
     {
-      colourRed(0);
+      colourRed(currPil-1);
     }
     else
     {
-      colourWhite(0);
+      colourGreen(currPil-1);
     }
+    channelScan_allchannels(); // scans all channels
   }
 
 

@@ -276,6 +276,7 @@ void buttonShort()
       leds[whiteLed] = CRGB::White;
       FastLED.setBrightness( BRIGHTNESS );
       FastLED.show();
+      Serial.print("Brightness: "); Serial.println(BRIGHTNESS);
     }
   }
   else if (setupSys == 2) //main lights only or extra lights
@@ -333,6 +334,7 @@ void buttonShort()
       mode = 2;
       iMODEshow();
     }
+    Serial.print("Mode: "); Serial.println(mode);
   }
   else if (setupSys == 11 ) // dificulty for SP OR number of pilots
   {
@@ -348,6 +350,7 @@ void buttonShort()
         spLevel = 1;
         isingleCTF();
       }
+      Serial.print("dificulty for SP: "); Serial.println(spLevel);
     }
     else
     {
@@ -361,6 +364,7 @@ void buttonShort()
         numberPilots = 1;
         iPILOTSset();
       }
+      Serial.print("number of pilots: "); Serial.println(numberPilots);
     }
   }
   else if (setupSys > 20 && setupSys < 29 ) // pilot colour
@@ -380,7 +384,7 @@ void buttonShort()
         {
           pilot1o = 1;
         }
-
+        Serial.print("pilot1 colour: "); Serial.println(pilot1o);
       }
       else if (setupSys == 22)
       {
@@ -393,6 +397,7 @@ void buttonShort()
         {
           pilot2o = 1;
         }
+        Serial.print("pilot2 colour: "); Serial.println(pilot2o);
       }
 
       else if (setupSys == 23)
@@ -406,6 +411,7 @@ void buttonShort()
         {
           pilot3o = 1;
         }
+        Serial.print("pilot3 colour: "); Serial.println(pilot3o);
       }
 
       else if (setupSys == 24)
@@ -418,6 +424,7 @@ void buttonShort()
         {
           pilot4o = 1;
         }
+        Serial.print("pilot4 colour: "); Serial.println(pilot4o);
       }
 
       else if (setupSys == 25)
@@ -430,6 +437,7 @@ void buttonShort()
         {
           pilot5o = 1;
         }
+        Serial.print("pilot5 colour: "); Serial.println(pilot5o);
       }
       else if (setupSys == 26)
       {
@@ -441,7 +449,7 @@ void buttonShort()
         {
           pilot6o = 1;
         }
-
+        Serial.print("pilot6 colour: "); Serial.println(pilot6o);
       }
 
       else if (setupSys == 27)
@@ -454,6 +462,7 @@ void buttonShort()
         {
           pilot7o = 1;
         }
+        Serial.print("pilot7 colour: "); Serial.println(pilot7o);
       }
 
       else if (setupSys == 28)
@@ -466,6 +475,7 @@ void buttonShort()
         {
           pilot8o = 1;
         }
+        Serial.print("pilot8 colour: "); Serial.println(pilot8o);
       }
     }
     else
@@ -482,7 +492,7 @@ void buttonShort()
         {
           pilot1 = 1;
         }
-
+        Serial.print("pilot1 colour: "); Serial.println(pilot1);
       }
       else if (setupSys == 22)
       {
@@ -495,6 +505,7 @@ void buttonShort()
         {
           pilot2 = 1;
         }
+        Serial.print("pilot2 colour: "); Serial.println(pilot2);
       }
 
       else if (setupSys == 23)
@@ -508,6 +519,7 @@ void buttonShort()
         {
           pilot3 = 1;
         }
+        Serial.print("pilot3 colour: "); Serial.println(pilot3);
       }
 
       else if (setupSys == 24)
@@ -520,6 +532,7 @@ void buttonShort()
         {
           pilot4 = 1;
         }
+        Serial.print("pilot4 colour: "); Serial.println(pilot4);
       }
 
       else if (setupSys == 25)
@@ -532,6 +545,7 @@ void buttonShort()
         {
           pilot5 = 1;
         }
+        Serial.print("pilot5 colour: "); Serial.println(pilot5);
       }
       else if (setupSys == 26)
       {
@@ -543,7 +557,7 @@ void buttonShort()
         {
           pilot6 = 1;
         }
-
+        Serial.print("pilot6 colour: "); Serial.println(pilot6);
       }
 
       else if (setupSys == 27)
@@ -556,6 +570,7 @@ void buttonShort()
         {
           pilot7 = 1;
         }
+        Serial.print("pilot7 colour: "); Serial.println(pilot7);
       }
 
       else if (setupSys == 28)
@@ -568,7 +583,7 @@ void buttonShort()
         {
           pilot8 = 1;
         }
-
+        Serial.print("pilot8 colour: "); Serial.println(pilot8);
       }
     }
 
@@ -677,7 +692,7 @@ void buttonLongest()
   {
     colourWhite(whiteLed);
   }
-
+  Serial.print("Brightness: "); Serial.println(BRIGHTNESS);
 }
 
 void buttonLong()
